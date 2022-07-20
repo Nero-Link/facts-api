@@ -1,23 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from "react";
+import $ from "jquery";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay } from "swiper/core";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "./App.css";
+
+SwiperCore.use([Autoplay]);
 
 function App() {
+  const apiKey = "3iLLzYQSIqDPLAugE4VNkQ==yjVVpZ2Z6sN5omTp";
+  const [facts, setFacts] = useState(0);
+
+  function apiCall() {
+    const limit = 30;
+    $.ajax({
+      method: "GET",
+      url: "https://api.api-ninjas.com/v1/facts?limit=" + limit,
+      headers: { "X-Api-Key": apiKey },
+      contentType: "application/json",
+      success: function (result) {
+        setFacts(result);
+        console.log(facts);
+      },
+      error: function ajaxError(jqXHR) {
+        console.error("Error: ", jqXHR.responseText);
+      },
+    });
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="facts-container">
+        <Swiper
+          slidesPerView={1}
+          loop={true}
+          speed={750}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <SwiperSlide>
+            <p>1</p>
+          </SwiperSlide>
+          <SwiperSlide>
+            <p>2</p>
+          </SwiperSlide>
+          <SwiperSlide>
+            <p>3</p>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      {/* <button onClick={apiCall()}>New fact</button> */}
     </div>
   );
 }
