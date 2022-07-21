@@ -1,8 +1,9 @@
 body {
+  overflow: hidden;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Saira Extra Condensed", "Open Sans", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,9 +13,33 @@ code {
     monospace;
 }
 
+.banner {
+  display: flex;
+  background: #003cdc;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 10%;
+  margin-top: -25px;
+}
+
 .facts-container {
   line-height: 75vh;
   overflow: hidden;
   font-family: "Open Sans";
   font-size: 5rem;
+  margin: 20vh auto;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.swiper-slide p {
+  width: 90%;
+  height: 100%;
+  line-height: 150%;
+  margin: 0px auto;
 }
