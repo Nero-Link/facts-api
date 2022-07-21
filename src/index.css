@@ -18,10 +18,14 @@ code {
   background: #003cdc;
   align-items: center;
   justify-content: space-evenly;
-  color: white;
-  font-size: 2.5rem;
-  line-height: 10%;
+  height: 17.5vh;
   margin-top: -25px;
+}
+
+.title {
+  color: white;
+  margin: 0px;
+  font-size: 5rem;
 }
 
 .facts-container {
@@ -29,7 +33,7 @@ code {
   overflow: hidden;
   font-family: "Open Sans";
   font-size: 5rem;
-  margin: 20vh auto;
+  margin: 25vh auto;
 }
 
 .swiper-wrapper {
